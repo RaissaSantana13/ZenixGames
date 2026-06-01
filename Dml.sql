@@ -49,6 +49,9 @@ VALUES ('Cyberpunk 2077', 180, 80, 1);
 INSERT INTO Jogo (nome, preco, estoque_licencas, id_categoria)
 VALUES ('GTA VI', 600, 50, 3);
 
+INSERT INTO Jogo (nome, preco, estoque_licencas, id_categoria)
+VALUES ('Jogo Teste', 300, 0, 3);
+
 -- INSERTS CUPOM
 
 INSERT INTO Cupom (desconto, validade)
@@ -99,7 +102,7 @@ VALUES (1, 1);
 INSERT INTO BibliotecaUsuario (id_usuario, id_jogo)
 VALUES (1, 2);
 
-INSERT INTO BibliotecaUsuario (id_usuario, id_jogo)
+INSERT INTO BibliotecaUsuario (id_usuario, id_jogo)a
 VALUES (1, 5);
 
 INSERT INTO BibliotecaUsuario (id_usuario, id_jogo)
