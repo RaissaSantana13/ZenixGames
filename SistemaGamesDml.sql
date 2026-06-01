@@ -1,6 +1,4 @@
--- =========================
 -- INSERTS USUARIO
--- =========================
 
 INSERT INTO Usuario (nome, email, saldo)
 VALUES ('Hugo Pereira', 'hugo@gmail.com', 500);
@@ -11,9 +9,7 @@ VALUES ('Maria Silva', 'maria@gmail.com', 300);
 INSERT INTO Usuario (nome, email, saldo)
 VALUES ('Joao Souza', 'joao@gmail.com', 150);
 
--- =========================
 -- INSERTS CATEGORIA
--- =========================
 
 INSERT INTO Categoria (nome)
 VALUES ('RPG');
@@ -27,9 +23,7 @@ VALUES ('Aventura');
 INSERT INTO Categoria (nome)
 VALUES ('Esportes');
 
--- =========================
 -- INSERTS JOGO
--- =========================
 
 INSERT INTO Jogo (nome, preco, estoque_licencas, id_categoria)
 VALUES ('Elden Ring', 250, 100, 1);
@@ -46,9 +40,7 @@ VALUES ('God of War', 200, 150, 3);
 INSERT INTO Jogo (nome, preco, estoque_licencas, id_categoria)
 VALUES ('Cyberpunk 2077', 180, 80, 1);
 
--- =========================
 -- INSERTS CUPOM
--- =========================
 
 INSERT INTO Cupom (desconto, validade)
 VALUES (10, TO_DATE('2026-12-31','YYYY-MM-DD'));
@@ -59,9 +51,7 @@ VALUES (25, TO_DATE('2026-10-15','YYYY-MM-DD'));
 INSERT INTO Cupom (desconto, validade)
 VALUES (50, TO_DATE('2026-08-01','YYYY-MM-DD'));
 
--- =========================
 -- INSERTS PEDIDO
--- =========================
 
 INSERT INTO Pedido (id_usuario, id_cupom, valor_total)
 VALUES (1, 1, 225);
@@ -75,9 +65,7 @@ VALUES (1, 2, 150);
 INSERT INTO Pedido (id_usuario, id_cupom, valor_total)
 VALUES (3, NULL, 200);
 
--- =========================
 -- INSERTS ITEMPEDIDO
--- =========================
 
 INSERT INTO ItemPedido (id_pedido, id_jogo, preco)
 VALUES (1, 1, 250);
@@ -94,9 +82,7 @@ VALUES (4, 4, 200);
 INSERT INTO ItemPedido (id_pedido, id_jogo, preco)
 VALUES (1, 2, 0);
 
--- =========================
 -- INSERTS BIBLIOTECAUSUARIO
--- =========================
 
 INSERT INTO BibliotecaUsuario (id_usuario, id_jogo)
 VALUES (1, 1);
