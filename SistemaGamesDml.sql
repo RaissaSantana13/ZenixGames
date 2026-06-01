@@ -9,6 +9,12 @@ VALUES ('Maria Silva', 'maria@gmail.com', 300);
 INSERT INTO Usuario (nome, email, saldo)
 VALUES ('Joao Souza', 'joao@gmail.com', 150);
 
+INSERT INTO Usuario (nome, email, saldo)
+VALUES ('Pedro Teste', 'pedro@teste.com', 50);
+
+INSERT INTO Usuario (nome, email, saldo)
+VALUES ('Ana Teste', 'ana@teste.com', 1000);
+
 -- INSERTS CATEGORIA
 
 INSERT INTO Categoria (nome)
@@ -39,6 +45,9 @@ VALUES ('God of War', 200, 150, 3);
 
 INSERT INTO Jogo (nome, preco, estoque_licencas, id_categoria)
 VALUES ('Cyberpunk 2077', 180, 80, 1);
+
+INSERT INTO Jogo (nome, preco, estoque_licencas, id_categoria)
+VALUES ('GTA VI', 600, 50, 3);
 
 -- INSERTS CUPOM
 
