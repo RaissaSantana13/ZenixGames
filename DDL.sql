@@ -70,12 +70,14 @@ CREATE TABLE ItemPedido (
 );
 
 CREATE TABLE BibliotecaUsuario (
+
+    id_biblioteca NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     id_usuario NUMBER NOT NULL,
     id_jogo NUMBER NOT NULL,
     data_compra DATE DEFAULT SYSDATE,
 
-    CONSTRAINT pk_biblioteca
-        PRIMARY KEY (id_usuario, id_jogo),
+    CONSTRAINT uk_usuario_jogo 
+        UNIQUE (id_usuario, id_jogo),
 
     CONSTRAINT fk_biblioteca_usuario
         FOREIGN KEY (id_usuario)
@@ -85,16 +87,3 @@ CREATE TABLE BibliotecaUsuario (
         FOREIGN KEY (id_jogo)
         REFERENCES Jogo(id_jogo)
 );
-
-
-
-
-
-
-
-
-
-
-
-
-
