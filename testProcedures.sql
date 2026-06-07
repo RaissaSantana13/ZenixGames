@@ -1,4 +1,3 @@
-
 SELECT * FROM Usuario;
 SELECT * FROM Jogo;
 SELECT * FROM Pedido;
@@ -42,16 +41,15 @@ BEGIN
     prc_realizarCompra(4,6);
 END;
 
--- DESCOBRIR O ÚLTIMO PEDIDO CRIADO
+
+-- CANCELAMENTO COM SUCESSO
 
 SELECT MAX(id_pedido)
 FROM Pedido;
 
 
--- CANCELAMENTO COM SUCESSO
-
 BEGIN
-    prc_cancelarCompra(5); -- ULTIMO PEDIDO CRIADO
+    prc_cancelarCompra(5);
 END;
 
 
@@ -67,12 +65,24 @@ SELECT estoque_licencas
 FROM Jogo
 WHERE id_jogo = 4;
 
--- CANCELAMENTO DE PEDIDO QUE NÃO EXISTE
+-- CANCELAMENTO DE PEDIDO QUE NÃƒO EXISTE
 BEGIN
     prc_cancelarCompra(999);
 END;
 
+
 -- SEM ESTOQUE
 BEGIN
     prc_realizarCompra(5,7);
+END;
+
+-- COMPRA CUPOM SUCESSO
+BEGIN
+    prc_realizarCompra(5,4,1);
+END;
+
+
+-- CUPOM INEXISTENTE
+BEGIN
+    prc_realizarCompra(5,6,999);
 END;
