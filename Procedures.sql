@@ -4,32 +4,15 @@ CREATE OR REPLACE PROCEDURE prc_realizarCompra (
     p_id_cupom IN NUMBER DEFAULT NULL
 )
 IS
-    v_preco NUMBER;
-    v_preco_final NUMBER;
-    v_saldo NUMBER;
-    v_estoque NUMBER;
-    v_id_pedido NUMBER;
-    v_existe NUMBER;
-    v_desconto NUMBER;
-    v_validade DATE;
+    v_preco        NUMBER;
+    v_preco_final  NUMBER;
+    v_estoque      NUMBER;
+    v_id_pedido    NUMBER;
+    v_desconto     NUMBER;
+    v_validade     DATE;
 BEGIN
 
-    SET TRANSACTION READ WRITE;
-
     SAVEPOINT sp_compra;
-
-    SELECT COUNT(*)
-    INTO v_existe
-    FROM BibliotecaUsuario
-    WHERE id_usuario = p_id_usuario
-      AND id_jogo = p_id_jogo;
-
-    IF v_existe > 0 THEN
-        RAISE_APPLICATION_ERROR(
-            -20003,
-            'Usuario ja possui este jogo.'
-        );
-    END IF;
 
     SELECT preco, estoque_licencas
     INTO v_preco, v_estoque
@@ -45,7 +28,6 @@ BEGIN
 
     v_preco_final := v_preco;
 
-    -- Validação do cupom
     IF p_id_cupom IS NOT NULL THEN
 
         BEGIN
@@ -75,18 +57,6 @@ BEGIN
 
     END IF;
 
-    SELECT saldo
-    INTO v_saldo
-    FROM Usuario
-    WHERE id_usuario = p_id_usuario;
-
-    IF v_saldo < v_preco_final THEN
-        RAISE_APPLICATION_ERROR(
-            -20002,
-            'Saldo insuficiente.'
-        );
-    END IF;
-
     INSERT INTO Pedido (
         id_usuario,
         id_cupom,
@@ -113,15 +83,6 @@ BEGIN
     UPDATE Usuario
     SET saldo = saldo - v_preco_final
     WHERE id_usuario = p_id_usuario;
-
-    INSERT INTO BibliotecaUsuario (
-        id_usuario,
-        id_jogo
-    )
-    VALUES (
-        p_id_usuario,
-        p_id_jogo
-    );
 
     UPDATE Jogo
     SET estoque_licencas = estoque_licencas - 1
