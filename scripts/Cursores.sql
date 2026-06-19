@@ -1,7 +1,7 @@
 SET SERVEROUTPUT ON;
 
 DECLARE
-    -- Cursor que busca os jogos de um usu·rio especÌfico
+    -- Cursor que busca os jogos de um usu√°rio espec√≠fico
     CURSOR c_jogos_usuario (p_id_usuario Usuario.id_usuario%TYPE) IS
         SELECT j.nome AS nome_jogo, b.data_compra
         FROM BibliotecaUsuario b
