@@ -28,7 +28,7 @@ BEGIN
     WHERE id_usuario = v_id_usuario 
       AND id_jogo = :NEW.id_jogo;
     IF v_possui > 0 THEN
-        RAISE_APPLICATION_ERROR(-20002, 'Erro: O usu·rio j· possui este jogo em sua biblioteca.');
+        RAISE_APPLICATION_ERROR(-20002, 'Erro: O usu√°rio j√° possui este jogo em sua biblioteca.');
     END IF;
 END;
 
