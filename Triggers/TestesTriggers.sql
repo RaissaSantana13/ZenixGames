@@ -9,7 +9,7 @@ VALUES (4, NULL, 40);
 SELECT * FROM Pedido WHERE id_usuario = 4;
 
 --teste trigger jogo duplicado 
--- Primeira compra e inserção auto
+-- Primeira compra e inserÃ§Ã£o auto
 INSERT INTO ItemPedido (id_pedido, id_jogo, preco)
 VALUES (4, 3, 180);
 
