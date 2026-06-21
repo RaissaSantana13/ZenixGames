@@ -19,10 +19,10 @@
 
 ## 👥 Equipe Desenvolvedora
 
-**Arthur Christhopher Pires Dutra** 
-**Hugo Pereira Pinhata** 
-**Pedro Cabelo Ferreira**
-**Raissa Santana da Silva** 
+**Arthur Christhopher Pires Dutra**  <br>
+**Hugo Pereira Pinhata**  <br>
+**Pedro Cabelo Ferreira** <br>
+**Raissa Santana da Silva**  <br>
 ---
 
 ### 1.Procedures
