@@ -11,7 +11,7 @@
 
 <br>
 
-> **Instituição:** Instituto Federal (ou sua Instituição) <br>
+> **Instituição:** Instituto Federal <br>
 > **Disciplina:** Banco de Dados II <br>
 > **Atividade:** Trabalho Final <br>
 
